@@ -3,21 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <title>Joystick</title>
-  <link rel="stylesheet" href="joystick.css" />
+  <link rel="stylesheet" href="joystick.css"/>
   <style>
     body {
-      background: black;
-      color: grey;
+      background: rgb(40, 40, 40);
+      color: rgb(200, 200, 200);
       font-family: Arial, sans-serif;
     }
+
     a {
-      color: lightgrey;
+      color: rgb(220, 220, 220);
       text-decoration: none;
     }
+
     a:hover {
-      color: white;
+      color: rgb(250, 250, 250);
       text-decoration: underline;
     }
+
     #examples .joystick {
       zoom: 60%;
     }
@@ -25,9 +28,12 @@
 </head>
 <body>
 <h1>CSS Joystick</h1>
+
 <div class="joystick" id="joystick"></div>
-<p>Use the arrow keys and spacebar to interact with the controller.</p>
+<p>Use the arrow keys and spacebar to interact with the joystick.</p>
+
 <p>View this project on GitHub: <a href="https://github.com/davidvandusen/joystick">davidvandusen/joystick</a></p>
+
 <div id="examples">
   <div class="joystick"></div>
   <div class="joystick pressed"></div>
@@ -42,7 +48,7 @@
 </div>
 <script>
   (function () {
-    var KEYS =[];
+    var KEYS = [];
     KEYS[32] = 'pressed';
     KEYS[37] = 'left';
     KEYS[38] = 'up';
