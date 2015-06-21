@@ -1,0 +1,129 @@
+.joystick {
+  background: linear-gradient(rgb(40, 40, 40), rgb(10, 10, 10));
+  box-shadow: inset 1px 2px 15px rgba(255, 255, 255, .3);
+  border-radius: 15px;
+  display: inline-block;
+  height: 300px;
+  position: relative;
+  width: 300px;
+}
+
+.joystick:before {
+  background: radial-gradient(rgb(175, 0, 0), rgb(200, 0, 0));
+  border-radius: 50%;
+  box-shadow: inset -10px -15px 45px rgba(255, 255, 255, .25),
+  inset 0 0 0 2px rgb(250, 55, 55),
+  inset 2px 3px 0 0 rgb(255, 255, 255),
+  inset -2px -3px 0 0 rgb(255, 255, 255),
+  0 0 0 5px rgb(150, 0, 0),
+  -1px -1px 0 5px rgb(225, 0, 0);
+  content: '';
+  display: block;
+  height: 50px;
+  left: 220px;
+  position: absolute;
+  top: 220px;
+  width: 50px;
+}
+
+.joystick.pressed:before {
+  background: radial-gradient(rgb(125, 0, 0), rgb(150, 0, 0));
+  box-shadow: inset -10px -15px 45px rgba(255, 185, 185, .25),
+  inset 1px 1px 4px 1px rgba(0, 0, 0, .85),
+  0 0 0 5px rgb(150, 0, 0),
+  inset -1px -1px 0 0 rgba(250, 100, 100, .75),
+  -1px -1px 0 5px rgb(225, 0, 0);
+}
+
+.joystick:after {
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 11%, rgba(225, 55, 55, 1) 13%, rgba(200, 0, 0, 1) 100%);
+  border-radius: 50%;
+  box-shadow: inset 3px 5px 35px rgba(255, 205, 205, .75),
+  inset -10px -15px 45px rgba(0, 0, 0, .25),
+  0 0 0 55px rgba(255, 255, 255, .1),
+  0 0 0 57px rgba(0, 0, 0, .3),
+  15px 30px 15px 0 rgba(0, 0, 0, .75);
+  content: '';
+  display: block;
+  height: 80px;
+  left: 110px;
+  position: absolute;
+  top: 110px;
+  width: 80px;
+}
+
+.joystick.up:after {
+  box-shadow: inset 3px 5px 35px rgba(255, 205, 205, .75),
+  inset -10px -15px 45px rgba(0, 0, 0, .25),
+  0 40px 0 55px rgba(255, 255, 255, .1),
+  0 40px 0 57px rgba(0, 0, 0, .3),
+  15px 30px 15px 0 rgba(0, 0, 0, .75);
+  top: 70px;
+}
+
+.joystick.down:after {
+  box-shadow: inset 3px 5px 35px rgba(255, 205, 205, .75),
+  inset -10px -15px 45px rgba(0, 0, 0, .25),
+  0 -40px 0 55px rgba(255, 255, 255, .1),
+  0 -40px 0 57px rgba(0, 0, 0, .3),
+  15px 30px 15px 0 rgba(0, 0, 0, .75);
+  top: 150px;
+}
+
+.joystick.left:after {
+  box-shadow: inset 3px 5px 35px rgba(255, 205, 205, .75),
+  inset -10px -15px 45px rgba(0, 0, 0, .25),
+  40px 0 0 55px rgba(255, 255, 255, .1),
+  40px 0 0 57px rgba(0, 0, 0, .3),
+  15px 30px 15px 0 rgba(0, 0, 0, .75);
+  left: 70px;
+}
+
+.joystick.right:after {
+  box-shadow: inset 3px 5px 35px rgba(255, 205, 205, .75),
+  inset -10px -15px 45px rgba(0, 0, 0, .25),
+  -40px 0 0 55px rgba(255, 255, 255, .1),
+  -40px 0 0 57px rgba(0, 0, 0, .3),
+  15px 30px 15px 0 rgba(0, 0, 0, .75);
+  left: 150px;
+}
+
+.joystick.up.left:after {
+  box-shadow: inset 3px 5px 35px rgba(255, 205, 205, .75),
+  inset -10px -15px 45px rgba(0, 0, 0, .25),
+  30px 30px 0 55px rgba(255, 255, 255, .1),
+  30px 30px 0 57px rgba(0, 0, 0, .3),
+  15px 30px 15px 0 rgba(0, 0, 0, .75);
+  left: 80px;
+  top: 80px;
+}
+
+.joystick.up.right:after {
+  box-shadow: inset 3px 5px 35px rgba(255, 205, 205, .75),
+  inset -10px -15px 45px rgba(0, 0, 0, .25),
+  -30px 30px 0 55px rgba(255, 255, 255, .1),
+  -30px 30px 0 57px rgba(0, 0, 0, .3),
+  15px 30px 15px 0 rgba(0, 0, 0, .75);
+  left: 140px;
+  top: 80px;
+}
+
+.joystick.down.left:after {
+  box-shadow: inset 3px 5px 35px rgba(255, 205, 205, .75),
+  inset -10px -15px 45px rgba(0, 0, 0, .25),
+  30px -30px 0 55px rgba(255, 255, 255, .1),
+  30px -30px 0 57px rgba(0, 0, 0, .3),
+  15px 30px 15px 0 rgba(0, 0, 0, .75);
+  left: 80px;
+  top: 140px;
+}
+
+.joystick.down.right:after {
+  box-shadow: inset 3px 5px 35px rgba(255, 205, 205, .75),
+  inset -10px -15px 45px rgba(0, 0, 0, .25),
+  -30px -30px 0 55px rgba(255, 255, 255, .1),
+  -30px -30px 0 57px rgba(0, 0, 0, .3),
+  15px 30px 15px 0 rgba(0, 0, 0, .75);
+  left: 140px;
+  top: 140px;
+}
