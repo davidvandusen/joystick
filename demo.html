@@ -10,14 +10,24 @@
       color: grey;
       font-family: Arial, sans-serif;
     }
+    a {
+      color: lightgrey;
+      text-decoration: none;
+    }
+    a:hover {
+      color: white;
+      text-decoration: underline;
+    }
     #examples .joystick {
       zoom: 60%;
     }
   </style>
 </head>
 <body>
+<h1>CSS Joystick</h1>
 <div class="joystick" id="joystick"></div>
 <p>Use the arrow keys and spacebar to interact with the controller.</p>
+<p>View this project on GitHub: <a href="https://github.com/davidvandusen/joystick">davidvandusen/joystick</a></p>
 <div id="examples">
   <div class="joystick"></div>
   <div class="joystick pressed"></div>
@@ -32,63 +42,31 @@
 </div>
 <script>
   (function () {
+    var KEYS =[];
+    KEYS[32] = 'pressed';
+    KEYS[37] = 'left';
+    KEYS[38] = 'up';
+    KEYS[39] = 'right';
+    KEYS[40] = 'down';
     var joystick = document.getElementById('joystick');
-    var keysDown = {
-      pressed: false,
-      up: false,
-      left: false,
-      down: false,
-      right: false
-    };
+    var keysDown = {};
     document.addEventListener('keydown', function (e) {
-      switch (e.which) {
-        case 32:
-          keysDown.pressed = true;
-          break;
-        case 37:
-          keysDown.left = true;
-          break;
-        case 38:
-          keysDown.up = true;
-          break;
-        case 39:
-          keysDown.right = true;
-          break;
-        case 40:
-          keysDown.down = true;
-          break;
-      }
-      updateJoystickClass();
+      if (!KEYS[e.which]) return;
       e.preventDefault();
+      keysDown[KEYS[e.which]] = true;
+      updateJoystickClass();
     });
     document.addEventListener('keyup', function (e) {
-      switch (e.which) {
-        case 32:
-          keysDown.pressed = false;
-          break;
-        case 37:
-          keysDown.left = false;
-          break;
-        case 38:
-          keysDown.up = false;
-          break;
-        case 39:
-          keysDown.right = false;
-          break;
-        case 40:
-          keysDown.down = false;
-          break;
-      }
-      updateJoystickClass();
+      if (!KEYS[e.which]) return;
       e.preventDefault();
+      keysDown[KEYS[e.which]] = false;
+      updateJoystickClass();
     });
     function updateJoystickClass() {
       var classNames = ['joystick'];
-      for (var key in keysDown) {
-        if (Object.prototype.hasOwnProperty.call(keysDown, key) && keysDown[key]) {
-          classNames.push(key);
-        }
-      }
+      Object.keys(keysDown).forEach(function (key) {
+        if (keysDown[key]) classNames.push(key);
+      });
       joystick.className = classNames.join(' ');
     }
   })();
