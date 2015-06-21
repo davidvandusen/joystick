@@ -63,6 +63,7 @@
   left: 110px;
   position: absolute;
   top: 110px;
+  transition: all .02s linear;
   width: 80px;
 }
 
